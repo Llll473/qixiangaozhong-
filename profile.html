@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人主页 - 河南省杞县高中</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/user.css">
+    <link rel="stylesheet" href="css/forum.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>河南省杞县高中</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="index.html#about">关于</a></li>
+                    <li><a href="index.html#services">教育特色</a></li>
+                    <li><a href="forum.html">校园论坛</a></li>
+                    <li><a href="index.html#contact">联系我们</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="user-menu">
+                <span id="userDisplayName"></span>
+                <div class="user-dropdown">
+                    <a href="profile.html">个人主页</a>
+                    <a href="#" id="logoutBtn">退出登录</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="profile" class="user-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>个人主页</h2>
+                <p>查看和管理您的个人信息</p>
+            </div>
+
+            <div class="profile-container">
+                <div class="profile-sidebar">
+                    <div class="profile-info">
+                        <div class="profile-avatar">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                        <h3 id="profileName">加载中...</h3>
+                        <p id="profileClass">加载中...</p>
+                        <p class="join-date">注册时间: <span id="profileJoinDate">加载中...</span></p>
+                    </div>
+                    <div class="profile-stats">
+                        <div class="stat-item">
+                            <div class="stat-number" id="profilePostCount">0</div>
+                            <div class="stat-label">帖子</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" id="profileLikeCount">0</div>
+                            <div class="stat-label">获赞</div>
+                        </div>
+                    </div>
+                    <!-- 编辑资料功能已移除 -->
+                </div>
+                <div class="profile-content">
+                    <div class="profile-tabs">
+                        <button class="tab-btn active" data-tab="posts">我的帖子</button>
+                        <button class="tab-btn" data-tab="comments">我的评论</button>
+                    </div>
+                    <div class="tab-content active" id="posts-tab">
+                        <h3 class="content-title">我发布的帖子</h3>
+                        <div class="posts-list" id="userPostsList">
+                            <!-- 用户发布的帖子将显示在这里 -->
+                            <div class="empty-state">
+                                <i class="fas fa-inbox"></i>
+                                <p>您还没有发布过帖子</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-content" id="comments-tab">
+                        <h3 class="content-title">我发表的评论</h3>
+                        <div class="comments-list" id="userCommentsList">
+                            <!-- 用户发表的评论将显示在这里 -->
+                            <div class="empty-state">
+                                <i class="fas fa-comment-slash"></i>
+                                <p>您还没有发表过评论</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 编辑资料功能已移除 -->
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>河南省杞县高中</h2>
+                    <p>省级示范性普通高中</p>
+                </div>
+                <div class="footer-links">
+                    <h3>快速链接</h3>
+                    <ul>
+                        <li><a href="index.html">首页</a></li>
+                        <li><a href="index.html#about">关于</a></li>
+                        <li><a href="index.html#services">教育特色</a></li>
+                        <li><a href="forum.html">校园论坛</a></li>
+                        <li><a href="index.html#contact">联系我们</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h3>关注我们</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-weixin"></i></a>
+                        <a href="#"><i class="fab fa-weibo"></i></a>
+                        <a href="#"><i class="fab fa-qq"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 河南省杞县高中. 保留所有权利.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/user.js"></script>
+    <script src="js/profile.js"></script>
+</body>
+</html> 

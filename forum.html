@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>校园论坛 - 河南省杞县高中</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/forum.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>河南省杞县高中</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="index.html#about">关于</a></li>
+                    <li><a href="index.html#services">教育特色</a></li>
+                    <li><a href="forum.html" class="active">校园论坛</a></li>
+                    <li><a href="index.html#contact">联系我们</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="user-menu">
+                <span id="userDisplayName"></span>
+                <div class="user-dropdown">
+                    <a href="profile.html">个人主页</a>
+                    <a href="#" id="logoutBtn">退出登录</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="forum" class="forum-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>校园论坛</h2>
+                <p>分享你的想法和经验</p>
+            </div>
+
+            <div class="forum-container">
+                <!-- 快速发帖区域 -->
+                <div class="quick-post">
+                    <textarea id="quickPostContent" placeholder="有什么新鲜事想分享？直接输入内容并选择分类即可发布..."></textarea>
+                    <div class="media-upload-options">
+                        <label for="imageUpload" class="upload-option">
+                            <i class="fas fa-image"></i> 图片
+                            <input type="file" id="imageUpload" accept="image/*" multiple style="display: none;">
+                        </label>
+                        <label for="videoUpload" class="upload-option">
+                            <i class="fas fa-video"></i> 视频
+                            <input type="file" id="videoUpload" accept="video/*" style="display: none;">
+                        </label>
+                        <div class="upload-preview"></div>
+                    </div>
+                    <div class="quick-post-actions">
+                        <select id="quickPostCategory">
+                            <option value="game">游戏</option>
+                            <option value="trade">交易</option>
+                            <option value="gossip">八卦</option>
+                            <option value="news">最新消息</option>
+                            <option value="guide">校园攻略</option>
+                            <option value="study">学习</option>
+                            <option value="love">恋爱</option>
+                        </select>
+                        <button class="btn quick-post-btn">发布</button>
+                    </div>
+                </div>
+
+                <div class="forum-actions">
+                    <div class="forum-categories">
+                        <select id="category-filter">
+                            <option value="all">所有分类</option>
+                            <option value="game">游戏</option>
+                            <option value="trade">交易</option>
+                            <option value="gossip">八卦</option>
+                            <option value="news">最新消息</option>
+                            <option value="guide">校园攻略</option>
+                            <option value="study">学习</option>
+                            <option value="love">恋爱</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="posts-list">
+                    <!-- 示例帖子 -->
+                    <div class="post-card" data-category="study" data-id="1">
+                        <div class="post-header">
+                            <h3>高三数学复习经验分享</h3>
+                            <span class="post-category">学习</span>
+                        </div>
+                        <div class="post-meta">
+                            <span class="author"><i class="fas fa-user"></i> 张同学</span>
+                            <span class="date"><i class="fas fa-clock"></i> 2024-03-20</span>
+                        </div>
+                        <p class="post-excerpt">分享一下我在高三数学复习中的一些心得体会，希望能帮助到学弟学妹们...</p>
+                        <div class="post-footer">
+                            <div class="post-actions">
+                                <button class="btn-like" data-likes="25"><i class="fas fa-heart"></i> <span>25</span></button>
+                                <button class="btn-comment"><i class="fas fa-comment"></i> 评论</button>
+                            </div>
+                            <div class="post-stats">
+                                <span><i class="fas fa-eye"></i> 128</span>
+                            </div>
+                        </div>
+                        <!-- 评论区域 -->
+                        <div class="comments-section">
+                            <div class="comments-list">
+                                <div class="comment">
+                                    <div class="comment-header">
+                                        <span class="comment-author">李同学</span>
+                                        <span class="comment-date">2024-03-21</span>
+                                    </div>
+                                    <p class="comment-content">谢谢分享，太有用了！</p>
+                                </div>
+                                <div class="comment">
+                                    <div class="comment-header">
+                                        <span class="comment-author">王同学</span>
+                                        <span class="comment-date">2024-03-22</span>
+                                    </div>
+                                    <p class="comment-content">我按照你说的方法试了，效果确实很好！</p>
+                                </div>
+                            </div>
+                            <div class="comment-form">
+                                <textarea placeholder="添加评论..."></textarea>
+                                <button class="btn-submit-comment">发送</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="post-card" data-category="news" data-id="2">
+                        <div class="post-header">
+                            <h3>2024年校园文化节活动安排</h3>
+                            <span class="post-category">最新消息</span>
+                        </div>
+                        <div class="post-meta">
+                            <span class="author"><i class="fas fa-user"></i> 学生会</span>
+                            <span class="date"><i class="fas fa-clock"></i> 2024-03-19</span>
+                        </div>
+                        <p class="post-excerpt">本次校园文化节将举办多项精彩活动，包括才艺展示、书法比赛、演讲比赛等...</p>
+                        <div class="post-footer">
+                            <div class="post-actions">
+                                <button class="btn-like" data-likes="45"><i class="fas fa-heart"></i> <span>45</span></button>
+                                <button class="btn-comment"><i class="fas fa-comment"></i> 评论</button>
+                            </div>
+                            <div class="post-stats">
+                                <span><i class="fas fa-eye"></i> 256</span>
+                            </div>
+                        </div>
+                        <!-- 评论区域 -->
+                        <div class="comments-section">
+                            <div class="comments-list">
+                                <div class="comment">
+                                    <div class="comment-header">
+                                        <span class="comment-author">陈同学</span>
+                                        <span class="comment-date">2024-03-20</span>
+                                    </div>
+                                    <p class="comment-content">期待书法比赛！</p>
+                                </div>
+                            </div>
+                            <div class="comment-form">
+                                <textarea placeholder="添加评论..."></textarea>
+                                <button class="btn-submit-comment">发送</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>河南省杞县高中</h2>
+                    <p>省级示范性普通高中</p>
+                </div>
+                <div class="footer-links">
+                    <h3>快速链接</h3>
+                    <ul>
+                        <li><a href="index.html">首页</a></li>
+                        <li><a href="index.html#about">关于</a></li>
+                        <li><a href="index.html#services">教育特色</a></li>
+                        <li><a href="forum.html">校园论坛</a></li>
+                        <li><a href="index.html#contact">联系我们</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h3>关注我们</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-weixin"></i></a>
+                        <a href="#"><i class="fab fa-weibo"></i></a>
+                        <a href="#"><i class="fab fa-qq"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 河南省杞县高中. 保留所有权利.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/forum.js"></script>
+</body>
+</html> 
